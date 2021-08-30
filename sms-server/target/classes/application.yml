@@ -1,0 +1,23 @@
+#数据库连接配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource  #数据源
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_appapidemo?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: toor
+  thymeleaf:
+    cache: false
+
+#配置日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-value: 1 #删除的值
+      logic-not-delete-value: 0 #未删除的值
+  #包别名
+  type-aliases-package: com.sms.pojo
+
